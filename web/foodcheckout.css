@@ -1,0 +1,61 @@
+/* 
+    Document   : foodcheckout
+    Created on : Feb 5, 2013, 9:30:14 AM
+    Author     : Chuck Wojciuk
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+table{
+    width: 70%;
+    right: 15%;
+    left: 15%;
+    position: fixed;
+    border-left-style: solid;
+    border-left-width: 3px;
+    border-left-color: #333333;
+    background-color: #cc0000;
+}
+td {
+    
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+.cashDueWindow {
+    background-color: #666666;
+    
+    text-align: center;
+    vertical-align: middle;
+    letter-spacing: 2px;
+    width: 40%;
+    
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 52px;
+    font-weight: bolder;
+    color: white;
+}
+.row1 {
+    height: 150px;
+}
+.row1col3 {
+    
+    text-align: left;
+    vertical-align: middle;
+    letter-spacing: 1px;
+    background-color: #999999;
+    
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-weight: bolder;
+    font-size: 36px;
+    color: #cccccc;
+}
