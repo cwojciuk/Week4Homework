@@ -19,14 +19,14 @@
             <form name="orderForm" method="POST" action="fs">
                 <table>
                     <tr class ="row1">
-                        <td class="cashDueWindow" colspan="2">$9.86</td>
+                        <td class="cashDueWindow">$9.86</td>
 
-                        <td class="row1col3">Food Service Calculator</td>
+                        <td class="row1col3" colspan="2">Food Service Calculator</td>
                     </tr>
                     <tr>
                         <td>yo</td>
                         <td></td>
-                        <td>yo</td>
+                        <td class="row2col3" rowspan="3"><iframe></td>
                     </tr>
                 </table>
             </form>
