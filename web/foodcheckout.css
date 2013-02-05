@@ -20,7 +20,8 @@ table{
     background-color: #cc0000;
 }
 td {
-    
+    border-width: 2px;
+    border-style: solid;
     margin-right: 0px;
     margin-left: 0px;
     margin-bottom: 0px;
@@ -58,4 +59,7 @@ td {
     font-weight: bolder;
     font-size: 36px;
     color: #cccccc;
+}
+.row2col3 {
+    width: 40%;
 }
