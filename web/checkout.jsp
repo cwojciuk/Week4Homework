@@ -13,8 +13,6 @@
     <head>
         <link rel="stylesheet" type="text/css" href="foodcheckout.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
-        
         <title></title>
     </head>
     <body>
@@ -26,7 +24,7 @@
                         <td class="cashDueWindow">
                             <%
                                 if(session.getAttribute( "foods" ) != null){
-                                    out.println(session.getAttribute( "totalCost" ) );
+                                    out.println("$"+session.getAttribute( "totalCost" ) );
                                 }else{
                                     out.println("$0.00");
                                 }
@@ -42,7 +40,7 @@
                                     Food
                                 </th>
                                 <tr>
-                                    <td id="hamburger">
+                                    <td id="hamburger" onmouseover="cond()" >
                                         Hamburger
                                         <p>(Meal)</p>
                                         <button type="submit" class="btn-" id="hamminus" formaction="fs.do?action=subHam">-</button>
@@ -56,20 +54,6 @@
                                         <button class="btn" id="chicksandminus">+</button>
                                     </td>
                                     <td>
-                                        Grilled Chicken
-                                        <p>(Meal)</p>
-                                        <button class="btn-" id="grillchickplus">-</button>
-                                        <button class="btn" id="grillchickminus">+</button>
-                                    </td>
-                                    <td>
-                                        Fried Chicken
-                                        <p>(Meal)</p>
-                                        <button class="btn-" id="friedchickplus">-</button>
-                                        <button class="btn" id="friedchickminus">+</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
                                         Fries
                                         <p>(Side)</p>
                                         <button class="btn-" id="friesplus">-</button>
@@ -81,21 +65,34 @@
                                         <button class="btn-" id="saladplus">-</button>
                                         <button class="btn" id="saladminus">+</button>
                                     </td>
-                                    <td>
-                                        Fruit
-                                        <p>(Side)</p>
-                                        <button class="btn-" id="fruitplus">-</button>
-                                        <button class="btn" id="fruitminus">+</button>
-                                    </td>
-                                    <td>
-                                        Soup
-                                        <p>(Side)</p>
-                                        <button class="btn-" id="soupplus">-</button>
-                                        <button class="btn" id="soupminus">+</button>
-                                    </td>
                                 </tr>
-                                    
-                                
+                                <tr>
+                                    <td id="con" colspan="4" class="cond">
+                                        <table style="width: 100%;">
+                                            <tr class="condTable" style="height: 40px; vertical-align: top">
+                                                <td>
+                                                    <input type="checkbox" name="cond" value="Cheese">Cheese
+                                                </td>
+                                            
+                                                <td>
+                                                    <input type="checkbox" name="cond" value="Ketchup">Ketchup
+                                                </td>
+                                            
+                                                <td>
+                                                    <input type="checkbox" name="cond" value="Mustard">Mustard
+                                                </td>
+                                            
+                                                <td>
+                                                    <input type="checkbox" name="cond" value="Pickles">Pickles
+                                                </td>
+                                            
+                                                <td>
+                                                    <input type="checkbox" name="cond" value="Onions">Onions
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td> 
+                                </tr>
                             </table>
                         </td>
                         <td>

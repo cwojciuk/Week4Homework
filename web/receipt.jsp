@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="foodcheckout.css">
+        <link rel="stylesheet" type="text/css" href="receiptStyleSheet.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title></title>
     </head>
@@ -33,9 +33,14 @@
                                     out.println("Total Cost:</td>" + "<td>$"+ session.getAttribute( "totalCost" ) );
                                     out.println("</td>");
                                     out.println("</tr>");
+                                    out.println("<tr>");
+                                    out.println("<td>");
+                                    out.println("Thank You!");
+                                    out.println("</td>");
+                                    out.println("</tr>");
                                     out.println("</table>");
                                 %>
-                                Thank You!
+                                
                             </div>
     </body>
 </html>

@@ -9,4 +9,9 @@
 root { 
     display: block;
 }
+table {
+    width: 100%;
+    font-family: Gill, Helvetica, sans-serif;
+    
+}
 
