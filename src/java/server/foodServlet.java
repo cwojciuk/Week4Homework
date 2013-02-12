@@ -7,56 +7,29 @@ package server;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.*;
+import javax.ejb.EJB;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
+import model.*;
+import services.SplitFoodService;
+import services.TotalCostService;
 
 
 /**
  *
  * @author Chuck Wojciuk
  */
-@WebServlet(name = "foodServlet", urlPatterns = { "/fs" })
+@WebServlet(name = "foodServlet", urlPatterns = { "/fs.do" })
+
 public class foodServlet extends HttpServlet {
-
-
-    /**
-     * Processes requests for both HTTP
-     * <code>GET</code> and
-     * <code>POST</code> methods.
-     *
-     * @param request  servlet request
-     * @param response servlet response
-     *
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException      if an I/O error occurs
-     */
-    protected void processRequest( HttpServletRequest request,
-                                   HttpServletResponse response )
-            throws ServletException, IOException {
-        response.setContentType( "text/html;charset=UTF-8" );
-        PrintWriter out = response.getWriter();
-        try {
-            /*
-             * TODO output your page here. You may use following sample code.
-             */
-            out.println( "<html>" );
-            out.println( "<head>" );
-            out.println( "<title>Servlet foodServlet</title>" );            
-            out.println( "</head>" );
-            out.println( "<body>" );
-            out.println( "<h1>Servlet foodServlet at " + request.
-                    getContextPath() + "</h1>" );
-            out.println( "</body>" );
-            out.println( "</html>" );
-        } finally {            
-            out.close();
-        }
-    }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    public static final String PAGE = "checkout.jsp";
+    private TotalCostService tcs;
+    private List<Food> foods = new ArrayList<Food>(); 
+    SplitFoodService sos = new SplitFoodService();
+ // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 
     /**
      * Handles the HTTP
@@ -72,7 +45,6 @@ public class foodServlet extends HttpServlet {
     protected void doGet( HttpServletRequest request,
                           HttpServletResponse response )
             throws ServletException, IOException {
-        processRequest( request, response );
     }
 
 
@@ -90,7 +62,33 @@ public class foodServlet extends HttpServlet {
     protected void doPost( HttpServletRequest request,
                            HttpServletResponse response )
             throws ServletException, IOException {
-        processRequest( request, response );
+        
+        HttpSession session = request.getSession(true);
+        
+        double total = 0;
+        String action = request.getParameter("action");
+        response.setContentType("text/html");
+        if(action.equals( "addHam" )){
+            foods.add( new Hamburger());
+        }else if(action.equals("subHam") && foods.size()>0){
+            
+        }
+        if(action.equals( "addChicSand" ) ){
+            foods.add( new ChickenSandwich() );
+        }
+        tcs  = new TotalCostService();
+        total = tcs.getTotal(foods);
+        
+        int hamcount = sos.burgerCount( foods );
+        if(session==null){
+            session = request.getSession();
+        }
+        session.setAttribute( "hamcount", hamcount);
+        session.setAttribute( "foods" , foods);
+        session.setAttribute( "totalCost" , total);
+        
+        RequestDispatcher view = request.getRequestDispatcher(PAGE);
+        view.forward(request, response);
     }
 
 

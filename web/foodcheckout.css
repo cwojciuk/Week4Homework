@@ -9,57 +9,148 @@
 root { 
     display: block;
 }
+body {
+   
+    background-color: #cccccc;
+}
+div {
+    height: 95%;
+    width: 80%;
+    background-color: #FFFFFF;
+}
+p {
+    
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: italic;
+    color: #333333;
+}
 table{
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
+}
+.mainTable{
     width: 70%;
+    height: 98%;
     right: 15%;
     left: 15%;
     position: fixed;
     border-left-style: solid;
     border-left-width: 3px;
     border-left-color: #333333;
-    background-color: #cc0000;
+    background-color: #FFFFFF;
+    column-rule-width: 0;
+    column-rule-style: none;
+    padding: 0;
+    margin: 0;
+}
+.foodTable {
+    border: 1px #003366 solid;
+    height:100%;
+    width: 100%;
+    
+    
+    text-align: center;
+    vertical-align: middle;
 }
 td {
-    border-width: 2px;
-    border-style: solid;
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    
-    padding-right: 0px;
-    padding-left: 0px;
-    padding-bottom: 0px;
-    padding-top: 0px;
+    border: 2px #003366 solid;
+}
+.foodTable td {
+    width: 20%;
+    height: 120px;
+    text-align: center;
+    vertical-align: bottom;
+    margin: 0px;
+    padding: 1% 1% 1% 1%;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    font-weight: bold;
 }
 .cashDueWindow {
-    background-color: #666666;
+    background-color: #003366;
     
     text-align: center;
     vertical-align: middle;
     letter-spacing: 2px;
     width: 40%;
-    
+    border-bottom-style: solid;
+    border-bottom-width: 5px;
+    border-bottom-color: black;
     font-family: Verdana,Arial,Helvetica,sans-serif;
     font-size: 52px;
     font-weight: bolder;
     color: white;
 }
-.row1 {
-    height: 150px;
-}
-.row1col3 {
+button {
+    width: 25%;
+    height: 30%;
+    position: static;
+    vertical-align: middle;
+    border-radius: 15%;
+    -moz-border-radius: 15%;
+    border-style: solid;
+    border-width: 0;
+    color: #000000;
     
+}
+.btn {
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    background-color: #009900;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.btn- {
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    color: #000000;
+    background-color: #cc0000;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.row1 {
+    height: 20%;
+}
+.row2 {
+    
+    vertical-align: top;
+    height: 100%;
+}
+
+.foods{
+    color: white;
+    font-weight: bold;
+    
+}
+th {
     text-align: left;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: bolder;
+    border:none;
+    
+}
+.row1col1 {
+    width: 55%;
+    text-align: right;
     vertical-align: middle;
     letter-spacing: 1px;
-    background-color: #999999;
-    
+    background-color: #99ccff;
+    border-bottom-style: solid;
+    border-bottom-width: 5px;
+    border-bottom-color: black;
     font-family: Verdana,Arial,Helvetica,sans-serif;
     font-weight: bolder;
     font-size: 36px;
-    color: #cccccc;
+    color: #333333;
 }
-.row2col3 {
-    width: 40%;
-}
+
+    
