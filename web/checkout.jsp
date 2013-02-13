@@ -43,27 +43,23 @@
                                     <td id="hamburger" onmouseover="cond()" >
                                         Hamburger
                                         <p>(Meal)</p>
-                                        <button type="submit" class="btn-" id="hamminus" formaction="fs.do?action=subHam">-</button>
                                         <button type="submit" class="btn" id="hamplus" formaction="fs.do?action=addHam">+</button>
                                         
                                     </td>
                                     <td id="chicksand">
                                         Chicken Sandwich
                                         <p>(Meal)</p>
-                                        <button class="btn-" id="chicksandplus">-</button>
-                                        <button class="btn" id="chicksandminus">+</button>
+                                        <button class="btn" id="chicksandplus">+</button>
                                     </td>
                                     <td>
                                         Fries
                                         <p>(Side)</p>
-                                        <button class="btn-" id="friesplus">-</button>
-                                        <button class="btn" id="friesminus">+</button>
+                                        <button class="btn" id="friesplus">+</button>
                                     </td>
                                     <td>
                                         Salad
                                         <p>(Side)</p>
-                                        <button class="btn-" id="saladplus">-</button>
-                                        <button class="btn" id="saladminus">+</button>
+                                        <button class="btn" id="saladplus">+</button>
                                     </td>
                                 </tr>
                                 <tr>

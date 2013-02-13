@@ -3,16 +3,16 @@
  * and open the template in the editor.
  */
 package model;
-import java.util.*;
+
 
 /**
  *
  * @author Chuck Wojciuk
  */
-public interface Food {
+public interface Condiment {
     public double getCost();
-    public void setCost();
-    public String getFoodType();
-    public List<Condiment> getCondiments();
+    public void setCost(double cost);
+    public String getCondimentType();
+    
 }
 

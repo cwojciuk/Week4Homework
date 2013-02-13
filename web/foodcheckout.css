@@ -114,11 +114,11 @@ button {
     margin-bottom: 5%;
 }
 .row1 {
+    height: 25%;
 }
 .row2 {
     
     vertical-align: top;
-    height: 100%;
 }
 
 .foods{
@@ -151,4 +151,6 @@ th {
 .condTable td input{
     vertical-align: top;
 }
-    
+iframe{
+    border:0;
+}    
