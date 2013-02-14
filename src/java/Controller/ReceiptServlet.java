@@ -18,7 +18,6 @@ import model.Condiment;
 import model.Food;
 import services.TotalCostService;
 
-
 /**
  *
  * @author Chuck Wojciuk
@@ -63,13 +62,13 @@ public class ReceiptServlet extends HttpServlet {
     protected void doPost( HttpServletRequest request,
                            HttpServletResponse response )
             throws ServletException, IOException {
-        List<Food> list = ( List<Food> ) request.getSession().getAttribute( "foods");
-        int index =  Integer.parseInt( request.getParameter( "i" ).toString());
+        List<Food> list = ( List<Food> ) request.getSession().getAttribute( FloatingValues.FOODS.getValue());
+        int index =  Integer.parseInt( request.getParameter( FloatingValues.I.getValue()));
         list.remove( index );
         TotalCostService tcs  = new TotalCostService();
         double total = tcs.getTotal(list);
-        request.getSession().setAttribute( "foods" , list);
-        request.getSession().setAttribute( "totalCost", total);
+        request.getSession().setAttribute( FloatingValues.FOODS.getValue() , list);
+        request.getSession().setAttribute( FloatingValues.TOTAL.getValue() , total);
         RequestDispatcher view = request.getRequestDispatcher(PAGE);
         view.forward(request, response);
     }

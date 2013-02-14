@@ -14,13 +14,9 @@ import model.Food;
  * @author Chuck Wojciuk
  */
 public class TotalCostService {
+    
     /**
-     *
-     */
-    public TotalCostService() {
-    }
-    /**
-     *
+     * gets the total cost of the bill.
      * @param foods
      * @return
      */

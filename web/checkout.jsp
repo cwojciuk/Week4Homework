@@ -4,6 +4,7 @@
     Author     : Chuck Wojciuk
 --%>
 
+<%@page import="Controller.FloatingValues"%>
 <%@page import="java.util.List"%>
 <%@page import="model.Food"%>
 <%@page import="javax.swing.text.Document"%>
@@ -37,23 +38,32 @@
                                     <td id="hamburger">
                                         Hamburger
                                         <p>(Meal)</p>
-                                        <button  class="btn" id="hamplus" formaction="fs.do?action=addHam">+</button>
+                                        <button  class="btn" id="hamplus"
+                                                  <%
+                                                            out.print( "formaction='fs.do?"+FloatingValues.ACTION.getValue()+"="+FloatingValues.HAM.getValue()+"'>+</button>");
+                                                           %>
                                         
                                     </td>
                                     <td id="chicksand">
                                         Chicken Sandwich
                                         <p>(Meal)</p>
-                                        <button class="btn" id="chicksandplus" formaction="fs.do?action=addChicSand">+</button>
+                                        <button class="btn" id="chicksandplus" <%
+                                                            out.print( "formaction='fs.do?"+FloatingValues.ACTION.getValue()+"="+FloatingValues.CHICSAND.getValue()+"'>+</button>");
+                                                           %>
                                     </td>
                                     <td>
                                         Fries
                                         <p>(Side)</p>
-                                        <button class="btn" id="friesplus" formaction="fs.do?action=addFries">+</button>
+                                        <button class="btn" id="friesplus" <%
+                                                            out.print( "formaction='fs.do?"+FloatingValues.ACTION.getValue()+"="+FloatingValues.FRIES.getValue()+"'>+</button>");
+                                                           %>
                                     </td>
                                     <td>
                                         Salad
                                         <p>(Side)</p>
-                                        <button class="btn" id="saladplus" formaction="fs.do?action=addSalad">+</button>
+                                        <button class="btn" id="saladplus" <%
+                                                            out.print( "formaction='fs.do?"+FloatingValues.ACTION.getValue()+"="+FloatingValues.SALAD.getValue()+"'>+</button>");
+                                                           %>
                                     </td>
                                 </tr>
                                 <tr>
@@ -84,7 +94,10 @@
                                     </td> 
                                 </tr>
                                 <tr>
-                                    <td colspan="4"><input type="submit" value="Check Out" id="btnCheckOut" formaction="fs.do?action=checkout"></td>
+                                    <td colspan="4"><input type="submit" value="Check Out" id="btnCheckOut" 
+                                                           <%
+                                                            out.print( "formaction='fs.do?"+FloatingValues.ACTION.getValue()+"="+FloatingValues.COUT.getValue()+"'></td>");
+                                                           %>
                                     
                                 </tr>
                             </table>

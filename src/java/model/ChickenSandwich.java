@@ -19,14 +19,14 @@ public class ChickenSandwich implements Food{
     private static final String TYPE = "Chicken Sandwich";
     private List<Condiment> clist;
     /**
-     *
+     * Constructor that accepts a list parameter
      * @param clist
      */
     public ChickenSandwich(List<Condiment> clist) {
         this.clist = clist;
     }
     /**
-     *
+     * gets the cost of a object
      * @return
      */
     @Override
@@ -34,7 +34,7 @@ public class ChickenSandwich implements Food{
         return chickenSandwichBaseCost;
     }
     /**
-     *
+     * gets the type of food
      * @return
      */
     @Override
@@ -42,14 +42,15 @@ public class ChickenSandwich implements Food{
         return TYPE;
     }
     /**
-     *
+     * sets the cost, not supported
+     * @param cost
      */
     @Override
     public void setCost() {
         throw new UnsupportedOperationException( "Not supported yet." );
     }
     /**
-     *
+     * gets a list of condiments a food object has
      * @return
      */
     @Override

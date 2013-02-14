@@ -4,6 +4,7 @@
     Author     : Chuck Wojciuk
 --%>
 
+<%@page import="Controller.FloatingValues"%>
 <%@page import="model.Condiment"%>
 <%@page import="java.util.List"%>
 <%@page import="model.Food"%>
@@ -19,13 +20,13 @@
         <div class="thereceiptarea">
             <form name="orderForm" method="POST">
                 <%
-                    if((Double.parseDouble(request.getSession().getAttribute( "totalCost").toString())!= 0.0 )){
+                    if((Double.parseDouble(request.getSession().getAttribute( FloatingValues.TOTAL.getValue() ).toString())!= 0.0 )){
                         out.println("<table class='receipttable'>");
                         out.println("<tr>");
                         out.println("<td colspan='3'><h1>Thank You for Ordering!</h1></td>");
                         out.println("</tr>");
-                        if(request.getSession().getAttribute( "foods" )!=null ){
-                            List<Food> foods = (List)request.getSession().getAttribute( "foods" );
+                        if(request.getSession().getAttribute( FloatingValues.FOODS.getValue() )!=null ){
+                            List<Food> foods = (List)request.getSession().getAttribute( FloatingValues.FOODS.getValue() );
                             int counter = 0;
                             for(Food food: foods){
                                 out.println("<tr><td>"+food.getFoodType()+ "</td>" + "<td> $" + food.getCost()+"</td>" + "<td><button type='submit' id='item"+counter+"' formaction='rs.do?i="+ counter +"'>-</button></td></tr>");
@@ -37,7 +38,7 @@
                         }
                         out.println("<tr>");
                         out.println("<td>");
-                        out.println("Total Cost:</td>" + "<td>$"+ request.getSession().getAttribute( "totalCost" ) );
+                        out.println("Total Cost:</td>" + "<td>$"+ request.getSession().getAttribute( FloatingValues.TOTAL.getValue() ) );
                         out.println("</td>");
                         out.println("</tr>");
                         out.println("<tr>");

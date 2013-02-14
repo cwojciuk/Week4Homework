@@ -12,7 +12,7 @@ public class Ketchup implements Condiment{
     private static double cost = 0.00;
     private static final String TYPE = "Ketchup";
     /**
-     *
+     * gets the cost of a object
      * @return
      */
     @Override
@@ -22,7 +22,7 @@ public class Ketchup implements Condiment{
 
 
     /**
-     *
+     * sets the cost, not supported
      * @param cost
      */
     @Override
@@ -32,7 +32,7 @@ public class Ketchup implements Condiment{
 
 
     /**
-     *
+     * gets the type of condiment
      * @return
      */
     @Override

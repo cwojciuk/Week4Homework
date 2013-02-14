@@ -16,7 +16,7 @@ import model.*;
  */
 public class ToCondimentListService {
     /**
-     *
+     * converts a string array to a List
      * @param s
      * @return
      */

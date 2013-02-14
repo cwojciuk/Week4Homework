@@ -73,33 +73,31 @@ public class foodServlet extends HttpServlet {
         HttpSession session = request.getSession(true);
         
         double total = 0;
-        String action = request.getParameter("action");
+        String action = request.getParameter(FloatingValues.ACTION.getValue());
         response.setContentType("text/html");
         ToCondimentListService tcls = new ToCondimentListService();
         
-        if(action.equals( "addHam" )){
-            foods.add( new Hamburger(tcls.stringsToList( request.getParameterValues("cond") )));
-        }else if(action.equals("subHam") && foods.size()>0){
-            
+        if(action.equals( FloatingValues.HAM.getValue() )){
+            foods.add( new Hamburger(tcls.stringsToList( request.getParameterValues(FloatingValues.COND.getValue()) )));
         }
-        if(action.equals( "addChicSand" ) ){
-            foods.add( new ChickenSandwich(tcls.stringsToList( request.getParameterValues("cond") )) );
+        if(action.equals( FloatingValues.CHICSAND.getValue() ) ){
+            foods.add( new ChickenSandwich(tcls.stringsToList( request.getParameterValues(FloatingValues.COND.getValue()) )) );
         }
-        if(action.equals( "addFries" ) ){
-            foods.add( new Fries(tcls.stringsToList( request.getParameterValues("cond") )) );
+        if(action.equals( FloatingValues.FRIES.getValue() ) ){
+            foods.add( new Fries(tcls.stringsToList( request.getParameterValues(FloatingValues.COND.getValue()) )) );
         }
-        if(action.equals( "addSalad" ) ){
-            foods.add( new Salad(tcls.stringsToList( request.getParameterValues("cond") )) );
+        if(action.equals( FloatingValues.SALAD.getValue() ) ){
+            foods.add( new Salad(tcls.stringsToList( request.getParameterValues(FloatingValues.COND.getValue()) )) );
         }
         tcs  = new TotalCostService();
         total = tcs.getTotal(foods);
         if(session != null){
-            session.setAttribute( "foods" , foods);
-            session.setAttribute( "totalCost" , total);
+            session.setAttribute( FloatingValues.FOODS.getValue() , foods);
+            session.setAttribute( FloatingValues.TOTAL.getValue() , total);
         }
-        if(action.equals( "checkout") ){
-            request.getSession().setAttribute( "totalCost",0);
-            request.getSession().setAttribute( "foods", null);
+        if(action.equals( FloatingValues.COUT.getValue()) ){
+            request.getSession().setAttribute( FloatingValues.TOTAL.getValue(),0);
+            request.getSession().setAttribute( FloatingValues.FOODS.getValue(), null);
         
             request.getSession().invalidate();
             RequestDispatcher view = request.getRequestDispatcher(CHPAGE);

@@ -40,9 +40,6 @@ public class CheckOutServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         try {
-            /*
-             * TODO output your page here. You may use following sample code.
-             */
             
             out.println( "<html>" );
             out.println( "<head>" );

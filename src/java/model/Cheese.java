@@ -12,7 +12,7 @@ public class Cheese implements Condiment{
     private static double cost = .50;
     private static final String TYPE = "Cheese";
     /**
-     *
+     * gets the cost of a object
      * @return
      */
     @Override
@@ -20,7 +20,7 @@ public class Cheese implements Condiment{
         return cost;
     }
     /**
-     *
+     * sets the cost, not supported
      * @param cost
      */
     @Override
@@ -28,7 +28,7 @@ public class Cheese implements Condiment{
         throw new UnsupportedOperationException( "Not supported yet." );
     }
     /**
-     *
+     * gets the type of condiment
      * @return
      */
     @Override

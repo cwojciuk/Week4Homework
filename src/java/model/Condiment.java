@@ -11,17 +11,17 @@ package model;
  */
 public interface Condiment {
     /**
-     *
+     * gets the cost of a object
      * @return
      */
     public double getCost();
     /**
-     *
+     * sets the cost, not supported
      * @param cost
      */
     public void setCost(double cost);
     /**
-     *
+     * gets the type of condiment
      * @return
      */
     public String getCondimentType();

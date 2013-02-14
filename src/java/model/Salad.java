@@ -18,7 +18,7 @@ public class Salad implements Food{
     private static final String TYPE = "Fries";
     private List<Condiment> clist;
     /**
-     *
+     * Constructor that accepts a list parameter
      * @param clist
      */
     public Salad(List<Condiment> clist) {
@@ -27,7 +27,7 @@ public class Salad implements Food{
     
     
     /**
-     *
+     * gets the cost of a object
      * @return
      */
     @Override
@@ -37,7 +37,8 @@ public class Salad implements Food{
 
 
     /**
-     *
+     * sets the cost, not supported
+     * @param cost
      */
     @Override
     public void setCost() {
@@ -46,7 +47,7 @@ public class Salad implements Food{
 
 
     /**
-     *
+     * gets the type of food
      * @return
      */
     @Override
@@ -54,7 +55,7 @@ public class Salad implements Food{
         return TYPE;
     }
     /**
-     *
+     * gets a list of condiments a food object has
      * @return
      */
     @Override

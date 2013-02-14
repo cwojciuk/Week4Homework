@@ -19,7 +19,7 @@ public class Hamburger implements Food{
     private List<Condiment> clist;
     
     /**
-     *
+     * Constructor that accepts a list parameter
      * @param clist
      */
     public Hamburger(List<Condiment> clist) {
@@ -27,7 +27,7 @@ public class Hamburger implements Food{
     }
     
     /**
-     *
+     * gets the cost of a object
      * @return
      */
     @Override
@@ -35,7 +35,7 @@ public class Hamburger implements Food{
         return hamburgerCost;
     }
     /**
-     *
+     * gets the type of food
      * @return
      */
     @Override
@@ -43,14 +43,15 @@ public class Hamburger implements Food{
         return TYPE;
     }
     /**
-     *
+     * sets the cost, not supported
+     * @param cost
      */
     @Override
     public void setCost() {
         throw new UnsupportedOperationException( "Not supported yet." );
     }
     /**
-     *
+     * gets a list of condiments a food object has
      * @return
      */
     @Override

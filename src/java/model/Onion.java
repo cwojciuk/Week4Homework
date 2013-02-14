@@ -12,7 +12,7 @@ public class Onion implements Condiment{
     private static double cost = 0.00;
     private static final String TYPE = "Onions";
     /**
-     *
+     * gets the cost of a object
      * @return
      */
     @Override
@@ -22,7 +22,7 @@ public class Onion implements Condiment{
 
 
     /**
-     *
+     * sets the cost, not supported
      * @param cost
      */
     @Override
@@ -32,7 +32,7 @@ public class Onion implements Condiment{
 
 
     /**
-     *
+     * gets the type of condiment
      * @return
      */
     @Override
