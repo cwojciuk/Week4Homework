@@ -14,7 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import model.*;
-import services.SplitFoodService;
+import services.ToCondimentListService;
 import services.TotalCostService;
 
 
@@ -27,8 +27,8 @@ import services.TotalCostService;
 public class foodServlet extends HttpServlet {
     public static final String PAGE = "checkout.jsp";
     private TotalCostService tcs;
-    private List<Food> foods = new ArrayList<Food>(); 
-    SplitFoodService sos = new SplitFoodService();
+    private List<Food> foods = new ArrayList<Food>();
+    
  // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 
     /**
@@ -68,22 +68,28 @@ public class foodServlet extends HttpServlet {
         double total = 0;
         String action = request.getParameter("action");
         response.setContentType("text/html");
+        ToCondimentListService tcls = new ToCondimentListService();
+        
         if(action.equals( "addHam" )){
-            foods.add( new Hamburger());
+            foods.add( new Hamburger(tcls.stringsToList( request.getParameterValues("cond") )));
         }else if(action.equals("subHam") && foods.size()>0){
             
         }
         if(action.equals( "addChicSand" ) ){
-            foods.add( new ChickenSandwich() );
+            foods.add( new ChickenSandwich(tcls.stringsToList( request.getParameterValues("cond") )) );
+        }
+        if(action.equals( "addFries" ) ){
+            foods.add( new Fries(tcls.stringsToList( request.getParameterValues("cond") )) );
+        }
+        if(action.equals( "addSalad" ) ){
+            foods.add( new Salad(tcls.stringsToList( request.getParameterValues("cond") )) );
         }
         tcs  = new TotalCostService();
         total = tcs.getTotal(foods);
         
-        int hamcount = sos.burgerCount( foods );
         if(session==null){
             session = request.getSession();
         }
-        session.setAttribute( "hamcount", hamcount);
         session.setAttribute( "foods" , foods);
         session.setAttribute( "totalCost" , total);
         
