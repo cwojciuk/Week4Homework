@@ -17,18 +17,19 @@
     </head>
     <body>
         <div class="thereceiptarea">
-            <form name="orderForm" method="POST" action="rs">
+            <form name="orderForm" method="POST">
                 <%
-                    if((Double.parseDouble(session.getAttribute( "totalCost").toString())!= 0.0 )){
+                    if((Double.parseDouble(request.getSession().getAttribute( "totalCost").toString())!= 0.0 )){
                         out.println("<table class='receipttable'>");
                         out.println("<tr>");
                         out.println("<td colspan='3'><h1>Thank You for Ordering!</h1></td>");
                         out.println("</tr>");
-                        if(session.getAttribute( "foods" )!=null ){
+                        if(request.getSession().getAttribute( "foods" )!=null ){
                             List<Food> foods = (List)request.getSession().getAttribute( "foods" );
                             int counter = 0;
                             for(Food food: foods){
                                 out.println("<tr><td>"+food.getFoodType()+ "</td>" + "<td> $" + food.getCost()+"</td>" + "<td><button type='submit' id='item"+counter+"' formaction='rs.do?i="+ counter +"'>-</button></td></tr>");
+                                counter++;
                                  for(Condiment c: food.getCondiments()){
                                      out.println("<tr class='condRow'><td><p>"+c.getCondimentType()+"</p></td><td></td></tr>");
                                  }
@@ -36,7 +37,7 @@
                         }
                         out.println("<tr>");
                         out.println("<td>");
-                        out.println("Total Cost:</td>" + "<td>$"+ session.getAttribute( "totalCost" ) );
+                        out.println("Total Cost:</td>" + "<td>$"+ request.getSession().getAttribute( "totalCost" ) );
                         out.println("</td>");
                         out.println("</tr>");
                         out.println("<tr>");

@@ -14,8 +14,16 @@ import model.Food;
  * @author Chuck Wojciuk
  */
 public class TotalCostService {
+    /**
+     *
+     */
     public TotalCostService() {
     }
+    /**
+     *
+     * @param foods
+     * @return
+     */
     public double getTotal(List<Food> foods){
         double total = 0;
         for ( Food food : foods ) {

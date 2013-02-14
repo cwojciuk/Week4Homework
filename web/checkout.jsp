@@ -17,7 +17,7 @@
     </head>
     <body>
         <div>
-            <form name="orderForm" method="POST" action="fs">
+            <form name="orderForm" method="POST" action="cos">
                 <table class="mainTable" >
                     <tr class ="row1">
                         <td class="row1col1" >Food Service Calculator</td>
@@ -37,7 +37,7 @@
                                     <td id="hamburger">
                                         Hamburger
                                         <p>(Meal)</p>
-                                        <button type="submit" class="btn" id="hamplus" formaction="fs.do?action=addHam">+</button>
+                                        <button  class="btn" id="hamplus" formaction="fs.do?action=addHam">+</button>
                                         
                                     </td>
                                     <td id="chicksand">
@@ -83,6 +83,10 @@
                                         </table>
                                     </td> 
                                 </tr>
+                                <tr>
+                                    <td colspan="4"><input type="submit" value="Check Out" id="btnCheckOut" formaction="fs.do?action=checkout"></td>
+                                    
+                                </tr>
                             </table>
                         </td>
                         <td>
@@ -96,6 +100,7 @@
                             </div>
                         </td>
                     </tr>
+                    
                     
                 </table>
             </form>

@@ -25,7 +25,14 @@ import services.TotalCostService;
 @WebServlet(name = "foodServlet", urlPatterns = { "/fs.do" })
 
 public class foodServlet extends HttpServlet {
+    /**
+     *
+     */
     public static final String PAGE = "checkout.jsp";
+    /**
+     *
+     */
+    public static final String CHPAGE = "cos";
     private TotalCostService tcs;
     private List<Food> foods = new ArrayList<Food>();
     
@@ -86,12 +93,21 @@ public class foodServlet extends HttpServlet {
         }
         tcs  = new TotalCostService();
         total = tcs.getTotal(foods);
-        
-        if(session==null){
-            session = request.getSession();
+        if(session != null){
+            session.setAttribute( "foods" , foods);
+            session.setAttribute( "totalCost" , total);
         }
-        session.setAttribute( "foods" , foods);
-        session.setAttribute( "totalCost" , total);
+        if(action.equals( "checkout") ){
+            request.getSession().setAttribute( "totalCost",0);
+            request.getSession().setAttribute( "foods", null);
+        
+            request.getSession().invalidate();
+            RequestDispatcher view = request.getRequestDispatcher(CHPAGE);
+            view.forward(request, response);
+        }
+        
+
+        
         
         RequestDispatcher view = request.getRequestDispatcher(PAGE);
         view.forward(request, response);

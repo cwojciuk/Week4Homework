@@ -15,6 +15,11 @@ import model.*;
  * @author Chuck Wojciuk
  */
 public class ToCondimentListService {
+    /**
+     *
+     * @param s
+     * @return
+     */
     public List stringsToList(String[] s){
         List<Condiment> condList = new ArrayList<Condiment>();
         if(s == null){

@@ -10,9 +10,24 @@ import java.util.*;
  * @author Chuck Wojciuk
  */
 public interface Food {
+    /**
+     *
+     * @return
+     */
     public double getCost();
+    /**
+     *
+     */
     public void setCost();
+    /**
+     *
+     * @return
+     */
     public String getFoodType();
+    /**
+     *
+     * @return
+     */
     public List<Condiment> getCondiments();
 }
 
