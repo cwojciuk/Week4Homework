@@ -14,4 +14,17 @@ table {
     font-family: Gill, Helvetica, sans-serif;
     
 }
-
+p {
+    font-size: 12px;
+    text-align: center;
+    font-style: italic;
+}
+td {
+    border: 2px solid firebrick;
+}
+.condRow td {
+    margin: 0;
+    padding: 0;
+    column-gap: 0;
+    height:10px;
+}

@@ -22,13 +22,7 @@
                     <tr class ="row1">
                         <td class="row1col1" >Food Service Calculator</td>
                         <td class="cashDueWindow">
-                            <%
-                                if(session.getAttribute( "foods" ) != null){
-                                    out.println("$"+session.getAttribute( "totalCost" ) );
-                                }else{
-                                    out.println("$0.00");
-                                }
-                            %>
+                            
                         </td>
 
                         
@@ -40,7 +34,7 @@
                                     Food
                                 </th>
                                 <tr>
-                                    <td id="hamburger" onmouseover="cond()" >
+                                    <td id="hamburger">
                                         Hamburger
                                         <p>(Meal)</p>
                                         <button type="submit" class="btn" id="hamplus" formaction="fs.do?action=addHam">+</button>
@@ -49,17 +43,17 @@
                                     <td id="chicksand">
                                         Chicken Sandwich
                                         <p>(Meal)</p>
-                                        <button class="btn" id="chicksandplus">+</button>
+                                        <button class="btn" id="chicksandplus" formaction="fs.do?action=addChicSand">+</button>
                                     </td>
                                     <td>
                                         Fries
                                         <p>(Side)</p>
-                                        <button class="btn" id="friesplus">+</button>
+                                        <button class="btn" id="friesplus" formaction="fs.do?action=addFries">+</button>
                                     </td>
                                     <td>
                                         Salad
                                         <p>(Side)</p>
-                                        <button class="btn" id="saladplus">+</button>
+                                        <button class="btn" id="saladplus" formaction="fs.do?action=addSalad">+</button>
                                     </td>
                                 </tr>
                                 <tr>
